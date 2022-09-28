@@ -1,0 +1,122 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+
+// Overrides Bootstrap
+.nav-link {
+    padding: 0;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0;
+}
+
+// Style Nav
+.navbar {
+    &.navbar-expand-lg {
+        background-color: #f2f2f2;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .nav {
+            &-item {
+                margin-left: 20px;
+                margin-right: 20px;
+
+                &:hover {
+                    .nav-link {
+                        &:after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &-link {
+                position: relative;
+                padding-bottom: 4px;
+                transition: color 0.3s linear;
+                font-weight: 500;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    background-color: $secondaryColor;
+                    transition: width 0.2s ease-in-out;
+                }
+
+                &.active {
+                    color: $secondaryColor;
+
+                    &:after {
+                        width: 100%;
+                    }
+                }
+
+                &.dropdown-toggle {
+                    padding-right: 16px;
+
+                    &:after {
+                        margin-left: 0;
+                        border: 0;
+                    }
+
+                    &:before {
+                        content: "\ea5e";
+                        font-family: 'LineIcons';
+                        position: absolute;
+                        right: 0;
+                        font-size: 12px;
+                        top: 4px;
+                    }
+                }
+            }
+        }
+    }
+    &-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-right: 0;
+        img {
+            vertical-align: -6px;
+        }
+    }
+    &-item {
+        flex: 0 0 auto;
+        &__action {
+            li {
+                display: inline-block;
+                font-size: 20px;
+                cursor: pointer;
+                color: $primaryColor;
+                transition: color 0.3s linear;
+                &:hover {
+                    color: $secondaryColor;
+                }
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+.featured-category__section{
+    ul{
+        li {
+            a {
+                color: $grayColor;
+                &:hover {
+                    color: $secondaryColor;
+                }
+            }
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            color: $primaryColor;            
+        }
+    }
+}

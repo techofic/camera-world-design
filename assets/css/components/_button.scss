@@ -1,0 +1,18 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+
+// Button CSS
+.main-btn {
+    padding: 0.9375em 1.875em;
+    border-radius: 8px;
+    border: 0;
+    background-color: $secondaryColor;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: 'Inter Semi Bold';
+    &__border {
+        border: 2px solid $secondaryColor;
+        background-color: transparent;
+        color: $secondaryColor;
+    }
+}

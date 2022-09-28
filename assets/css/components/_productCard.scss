@@ -1,0 +1,97 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Product Card CSS
+
+.product-card {
+    // margin-bottom: 20px;
+    // height: 100%
+}
+
+.product-card__box {
+    border: 1px solid #E3E3E3;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 60px 32px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.product-card__box figure {
+    margin-bottom: 0;
+}
+
+.product-card__box figure img {
+    height: 140px;
+    display: block;
+    object-fit: contain;
+}
+
+.product-card__info {
+    padding: 8px 7px;
+    font-size: 13px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    color: #ffffff;
+}
+
+.product-card__info--left {
+    left: 15px;
+}
+
+.product-card__info--right {
+    right: 15px;
+}
+
+.product-card__info--red {
+    background-color: $secondaryColor;    
+}
+
+.product-card__info--blue {
+    background-color: $gray;
+}
+
+.product-card {
+    &__content {
+        &--title {
+            color: $secondaryColor;
+            font-family: "Inter Extra Light BETA";
+            margin-bottom: 0.6em;
+            font-size: 14px;
+        }
+
+        &--subtitle {
+            color: #0C0C0C;
+            font-family: 'Inter Extra Light BETA';
+            margin-bottom: 0.5em;
+            font-size: 14px;
+        }
+
+        &--price {
+            color: $primaryColor;
+            font-family: 'Inter Bold';
+            font-size: 16px;
+
+            del {
+                font-family: 'Inter Extra Light BETA';
+                opacity: 0.2;
+            }
+        }
+    }
+}
+
+// Responsive
+@include breakpoint-max(767px) {
+    .product-card__box {
+        padding: 40px 30px;
+    }
+}
+@include breakpoint-min(1200px) {
+    .product-card__box figure img {
+        height: 150px;
+    }
+}
