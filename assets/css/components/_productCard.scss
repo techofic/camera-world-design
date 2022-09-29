@@ -5,17 +5,19 @@
 // Product Card CSS
 
 .product-card {
-    // margin-bottom: 20px;
-    // height: 100%
-}
-
-.product-card__box {
-    border: 1px solid #E3E3E3;
-    border-radius: 8px;
-    background-color: transparent;
-    padding: 60px 32px;
-    text-align: center;
-    margin-bottom: 1em;
+    &__box {
+        border: 1px solid #E3E3E3;
+        border-radius: 8px;
+        background-color: transparent;
+        padding: 60px 25px;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    &__single {
+        .product-card__box {
+            padding: 40px 25px;
+        }
+    }
 }
 
 .product-card__box figure {
@@ -58,27 +60,28 @@
 .product-card {
     &__content {
         &--title {
-            color: $secondaryColor;
-            font-family: "Inter Extra Light BETA";
-            margin-bottom: 0.6em;
+            color: $titleRed;
+            font-weight: 400;
             font-size: 14px;
+            &:not(:last-child) {
+                margin-bottom: 0.6em;
+            }
         }
 
         &--subtitle {
             color: #0C0C0C;
-            font-family: 'Inter Extra Light BETA';
             margin-bottom: 0.5em;
             font-size: 14px;
+            font-weight: 400;
         }
 
         &--price {
             color: $primaryColor;
-            font-family: 'Inter Bold';
             font-size: 16px;
-
+            font-weight: 600;
             del {
-                font-family: 'Inter Extra Light BETA';
                 opacity: 0.2;
+                font-weight: 400;
             }
         }
     }

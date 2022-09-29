@@ -2,42 +2,7 @@
     Add All Typography Here
 *****************************/
 
-/******** Font Face ********/
-// @font-face {
-//     font-family: 'Inter', sans-serif;
-//     src: url('../../font/Inter-Black.woff') format('woff');
-//     font-weight: 900;
-// }
-
-// @font-face {
-//     font-family: 'Inter', sans-serif;
-//     src: url('../../font/Inter-Bold.woff') format('woff');
-//     font-weight: 700;
-// }
-
-// @font-face {
-//     font-family: 'Inter', sans-serif;
-//     src: url('../../font/Inter-Medium.woff') format('woff');
-//     font-weight: 500;
-// }
-
-// @font-face {
-//     font-family: 'Inter', sans-serif;
-//     src: url('../../font/Inter-Regular.woff') format('woff');
-//     font-weight: 400;
-// }
-
-// @font-face {
-//     font-family: 'Inter', sans-serif;
-//     src: url('../../font/Inter-SemiBold.woff') format('woff');
-//     font-weight: 600;
-// }
-
 /******** Styling ********/
-// body {
-//     font-family: 'Inter', sans-serif;
-//     font-weight: 400;
-// }
 
 html {
     font-size: 1rem;
@@ -45,8 +10,9 @@ html {
 
 body {
     font-size: 1em;
+    font-family: 'Inter', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter Bold';
+    font-weight: 700;
 }

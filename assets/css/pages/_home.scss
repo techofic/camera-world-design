@@ -4,12 +4,19 @@
 
 /*************** Home CSS ***************/
 
-// Hero
+//------------------Hero----------------\\
+.hero-carousel .owl-carousel .owl-theme .owl-dots{
+    position: absolute;
+    bottom: 30px;
+    left: 45%;
+}
 .hero {
     &-section {
         padding-top: 100px;
         padding-bottom: 100px;
-        background-color: $primaryColor;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
 
         &__content {
             text-align: center;
@@ -18,11 +25,11 @@
             margin-right: auto;
 
             h4 {
-                color: #ffffff;
+                color: #CDCDCD;
                 font-size: 1.5em;
-                font-family: 'Inter Regular';
                 margin-bottom: 0.5em;
                 line-height: 1.4;
+                font-weight: 400;
             }
 
             h1 {
@@ -38,10 +45,51 @@
         }
     }
 }
+.header-info {
+    &-content {
+        display: flex;
+        &-item {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 8px;
+            width: 33.33%;
+            text-align: center;
+            justify-content: space-between;
+            color: $primaryColor;
+            line-height: 1.3;
+        }
+        &-item:not(:last-child) {
+            border-right: 1px solid white;
+        }
+    }
+}
 
-// Hot deals section
+
+@media only screen and (min-width: 768px) {
+    .header-info-content-item {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 14px;
+        width: 33.33%;
+        text-align: center;
+        justify-content: space-between;
+        color: $primaryColor;
+        line-height: 1.3;
+    }
+}
+
+
+//----------------Hot deals section----------------\\
 .hot-deals {
     &__carousel {
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
         &--area {
             padding-left: 75px;
             position: relative;
@@ -55,34 +103,24 @@
             background-color: #ffffff;
             border: 1px solid $borderColor;
             border-radius: 8px;
+            height: 100%;
         }
     }
 }
 
-// Featured Category
-    
-.featured-category__grid-container{
-    display: grid;
-    &-item:not(:last-child) {
-        margin-right: 40px;
-    }
-}
-@include breakpoint-max(991px) {
-    .featured-category__grid-container{
-        // grid-template-columns:last-child{
-        //     display: none;
-        // }
-        grid-template-columns: auto auto auto auto;
 
-    }
-}
-@include breakpoint-min(992px) {
-    .featured-category__grid-container{
-        grid-template-columns: auto auto auto auto auto;
+//----------------Featured Category----------------\\
+.featured-category {
+    &__grid {
+        &--item {
+            flex: 0 0 auto;
+            width: 20%;
+        }
     }
 }
 
-// New Product
+
+//----------------New Product----------------\\
 .owl-carousel .new-product__carousel {
     display: none;
 
@@ -90,23 +128,25 @@
         display: block;
     }
 }
-
 .active {
     color: $secondaryColor  !important;
 }
-
-.section-header__action--tab {
-    li {
-        font-size: 14px;
-    }
-
-    li:not(:last-child) {
-        margin-right: 15px;
+.new-product__section{
+    .section-header__action--tab {
+        li {
+            font-size: 14px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    
+        li:not(:last-child) {
+            margin-right: 15px;
+        }
     }
 }
 
-// Trending Offer
 
+//----------------Trending Offer----------------\\
 .trending_offers--section {
     display: flex;
     border: 1px solid $borderColor;
@@ -158,7 +198,8 @@
     }
 }
 
-// Featured Product
+
+//----------------Featured Product----------------\\
 .owl-carousel.featured-product__carousel {
     display: none;
 
@@ -166,16 +207,29 @@
         display: block;
     }
 }
+.featured-product__section{
+    .section-header__action--tab {
+        li {
+            font-size: 14px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    
+        li:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+}
 
-//Form section
 
+//----------------Form section----------------\\
 .form--section {
     background-color: #DEDFE1;
 
     &__content {
         width: 500px;
         padding-left: 80px;
-        padding-top: 80px;
+        padding-top: 30px;
         padding-bottom: 80px;
 
         h1 {
@@ -230,8 +284,8 @@
     }
 }
 
-// Article Section
 
+//----------------Article Section----------------\\
 .article--section {
     &__img {
         padding-bottom: 15px;
@@ -266,8 +320,8 @@
     }
 }
 
-// footer
 
+//----------------footer----------------\\
 .footer__section {
     background-color: $primaryColor;
     height: 60%;
@@ -302,24 +356,18 @@
     }
 }
 
-.hot-deals__carousel .owl-nav {
+.featured-category__carousel .owl-nav {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: -53px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
 }
-
-.hot-deals__carousel .item {
-    background-color: #ffffff;
-    border: 1px solid $borderColor;
-    border-radius: 8px;
-    height: 100%;
-}
-
-// Responsive
+//----------------Responsive----------------\\
 @include breakpoint-max(991px) {
+
+    // Hot Deals Carousel 
     .hot-deals__carousel {
         &--area {
             padding-left: 0;
@@ -335,14 +383,52 @@
             flex-direction: row;
             justify-content: center;
             button {
+                font-size: 30px;
+                color: $secondaryColor;
                 margin-left: 0.3em;
                 margin-right: 0.3em;
+            }
+        }
+        .new-product{
+            &__area {
+
+            }
+            
+            &.owl-theme .owl-nav {
+                position: absolute;
+                top: 50%;
+                button {
+                    
+                }
+            }
+        }
+    }
+    
+    // Featured Category 
+    .featured-category {
+        &__grid {
+            &--item {
+                width: 33%;
+            }
+        }
+    }
+}
+@include breakpoint-max(991px) {
+    // Featured Category 
+    .featured-category {
+        &__grid {
+            &--item {
+                width: 33%;
             }
         }
     }
 }
 @include breakpoint-min(992px) {
-    .hot-deals__carousel.owl-carousel .owl-nav button.owl-prev {
-        margin-bottom: 2em;
+    .hot-deals__carousel.owl-carousel .owl-nav button{
+        font-size: 30px;
+        color: $secondaryColor;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
     }
+    
 }

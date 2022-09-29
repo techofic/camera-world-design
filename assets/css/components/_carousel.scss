@@ -18,25 +18,31 @@
                 box-shadow: 0px 0px 55px rgba(228, 228, 228, 0.55);
             }
         }
+        .owl-dots{
+            position: absolute;
+            bottom: 30px;
+            left: 46%;
+        }
     }
 }
-
-.featured-category__carousel .owl-nav {
-    position: absolute;
-    top: 50%;
-    left: -53px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-}
-// New Product
-.featured-category__carousel.owl-carousel .owl-nav.disabled {
-    display: block;
+.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 0;
 }
 
-// Article
-.article-category__carousel.owl-carousel .owl-nav.disabled {
-    display: block;
+.new-product__carousel{
+    .owl {
+        &-carousel {
+        }
+        &-theme {
+            .owl-nav {
+                .owl-prev{
+                    position: absolute;
+                    top: 50%;
+                    left: -60px;
+                }
+            }
+        }
+    }           
 }
 
 // Responsive
@@ -48,6 +54,11 @@
                     width: 45px;
                     height: 45px;
                 }
+            }
+            .owl-dots{
+                position: absolute;
+                bottom: 30px;
+                left: 44%;
             }
         }
     }
