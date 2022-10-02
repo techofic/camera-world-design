@@ -9,16 +9,27 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: -5px;
     margin-bottom: 2em;
     h2 {
         font-size: 2em;
-        font-family: 'Inter Semi Bold';
         margin-right: 10px;
-        margin-top: 5px;
+        margin-bottom: 7px;
     }
     &__action {
-        margin-top: 5px;
+        margin-bottom: 7px;
+        &--tab {
+            li {
+                font-size: 14px;
+                display: inline-block;
+                cursor: pointer;
+                &.active {
+                    color: $secondaryColor;
+                }
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+            }
+        }
         a {
             font-size: 1em;
             display: inline-flex;

@@ -1,6 +1,14 @@
 // Add variables here
 @use '../abstracts/variables' as *;
 
+button {
+    border: 0;
+    &:active, &:focus {
+        border: 0;
+        outline: 0;
+    }
+}
+
 // Button CSS
 .main-btn {
     padding: 0.9375em 1.875em;
@@ -9,7 +17,9 @@
     background-color: $secondaryColor;
     color: #ffffff;
     font-size: 1em;
-    font-family: 'Inter Semi Bold';
+    font-weight: 600;
+    min-width: 125px;
+    // font-family: 'Inter Semi Bold';
     &__border {
         border: 2px solid $secondaryColor;
         background-color: transparent;

@@ -67,6 +67,10 @@
   font-weight: 800 !important;
 }
 
+.c-pointer {
+  cursor: pointer;
+}
+
 /***************************
     Add Responsive Here
 ***************************/

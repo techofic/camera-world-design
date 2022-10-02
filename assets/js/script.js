@@ -47,10 +47,10 @@ jQuery(function ($) {
 
     // New Product Carousel starts
 
-    let featuredCarousel = document.querySelectorAll(".new-product__carousel");
-    for (let i = 0; i < featuredCarousel.length; i++) {
-        console.log($("#featured-carousel-", i + 1));
-        $(`#featured-carousel-${i + 1}`).owlCarousel({
+    let newCarousel = document.querySelectorAll(".new-product__carousel");
+    for (let i = 0; i < newCarousel.length; i++) {
+        console.log($("#new-carousel-", i + 1));
+        $(`#new-carousel-${i + 1}`).owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
@@ -76,7 +76,6 @@ jQuery(function ($) {
         let idAttribute = $(this).attr("data-id");
         console.log(idAttribute);
         $(".new-product__area").find(`[data-carousel='${idAttribute}']`).addClass("active").siblings().removeClass("active");
-        // $(".new-product__area").find(".new-product__carousel" + "[data-carousel='" + idAttribute + "']").addClass("active").siblings().removeClass("active");
     });
 
 });
@@ -100,37 +99,37 @@ $('.trending--offers__carousel').owlCarousel({
     }
 });
 
-// Featured product Carousel starts
+    // Featured product Carousel starts
 
-let featuredCarousel = document.querySelectorAll(".featured-product__carousel");
-for (let i = 0; i < featuredCarousel.length; i++) {
-    console.log($("#featured-product-", i + 1));
-    $(`#featured-product-${i + 1}`).owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        dots: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 4
+    let featuredCarousel = document.querySelectorAll(".featured-product__carousel");
+    for (let i = 0; i < featuredCarousel.length; i++) {
+        console.log($("#featured-product-", i + 1));
+        $(`#featured-product-${i + 1}`).owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
             }
-        }
-    })
-}
+        })
+    }
 
-// Selection tab
-$(".featured-product__section .section-header__action--tab li").on("click", function () {
-    $(this).siblings().removeClass("active");
-    $(this).addClass("active");
-    let idAttribute = $(this).attr("data-id");
-    $(".hot-deals__carousel--area").find(".featured-product__carousel" + "[data-carousel='" + idAttribute + "']").addClass("active").siblings().removeClass("active");
-});
+    // Selection tab
+    $(".featured-product__section .section-header__action--tab li").on("click", function () {
+        $(this).siblings().removeClass("active");
+        $(this).addClass("active");
+        let idAttribute = $(this).attr("data-id");
+        $(".featured-product__area").find(`[data-carousel='${idAttribute}']`).addClass("active").siblings().removeClass("active");
+    });
 
 // Article Carousel starts
 $('.article-category__carousel').owlCarousel({

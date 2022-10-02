@@ -1,0 +1,66 @@
+// Add variables here
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Add input css here
+input {
+    border: 0;
+
+    &:active,
+    &:focus {
+        outline: 0;
+        border: 0;
+    }
+
+    // Checkbox
+    &[type=checkbox] {
+        display: none;
+
+        &+label {
+            font-size: 13px;
+            font-weight: 400;
+            color: #373737;
+            position: relative;
+            padding-left: 25px;
+
+            &:before {
+                content: "";
+                width: 15px;
+                height: 15px;
+                border-radius: 2px;
+                border: 1px solid #373737;
+                margin-right: 5px;
+                transition: all 0.3s linear;
+                padding: 1px;
+                position: absolute;
+                left: 0;
+                top: 2px;
+                font-size: 11px;
+                line-height: 11px;
+                cursor: pointer;
+            }
+        }
+
+        &:checked {
+            &+label {
+                &:before {
+                    content: "\ea5b";
+                    font-family: 'LineIcons';
+                    color: $secondaryColor;
+                    border-color: $secondaryColor;
+                }
+            }
+        }
+    }
+}
+
+// Checkbox
+// .input {
+//     &-checkbox {
+//         input {
+//             display: none;
+//         }
+
+//     }
+
+// }
